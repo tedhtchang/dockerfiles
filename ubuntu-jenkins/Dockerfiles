@@ -1,0 +1,9 @@
+Dockerfile
+root@bazel-remote-cache:~/ubuntu-jenkins# cat Dockerfile
+From ppc64le/ubuntu:18.04
+RUN apt-get update&&apt-get install -y sudo git
+RUN echo 'jenkins ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN useradd -ms /bin/bash jenkins
+USER jenkins
+WORKDIR /home/jenkins
+CMD ["/bin/bash"]
