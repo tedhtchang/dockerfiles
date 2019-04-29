@@ -1,0 +1,6 @@
+This builds a docker image to login as Jenkins user. This is useful when debugging Jenkins job that builds using Jenkins user.
+At same directory as Dockerfile, run the following to build the image:
+docker build -t <image-name> .
+
+Once the image is build, run the following to start the container:
+docker run -it --rm --name <container-name> <iamge-name> /bin/bash
